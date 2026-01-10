@@ -5,10 +5,19 @@
     <meta charset="UTF-8">
     <title>Web LAB </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../main.css">
+
 </head>
 
 <body>
+   <div id="header"></div>
+  <script>
+  fetch("../../header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
 
     <div class="container">
 
@@ -514,7 +523,16 @@ function parseJQ(){let obj=$.parseJSON(JSON.stringify(data.json));$("#d").text(J
 
 
         <script src="script.js"></script>
-        <footer>
+        <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+
+        <!-- <div class="red-bar"></div> -->
+        
+        <footer class="labs-footer">
             &copy; 2025 RGITX. All rights reserved.
         </footer>
 

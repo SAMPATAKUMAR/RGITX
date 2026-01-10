@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <title>Analysis and Design Algorithm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
+
+   <div id="header"></div>
+  <script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+
 
   <div class="container">
 
@@ -15,9 +26,9 @@
     </div>
     <div class="date">on March 05, 2025</div>
 
-    <div class="section-title">ALGORITHM</div>
+   
 
-    <div class="red-bar">W...</div>
+    <div class="red-bar"></div>
 
     <!-- PROGRAM 1 -->
     <div class="program">
@@ -105,6 +116,16 @@ void path()
       alert("Code copied!");
     }
   </script>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+  <footer class="labs-footer">
+    &copy; 2025 RGITX. All rights reserved.
+  </footer>
 
 </body>
 </html>

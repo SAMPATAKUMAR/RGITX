@@ -7,6 +7,17 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
+ 
+  <div id="header"></div>
+  <script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+</script>
+
+
 
   <div class="container">
 
@@ -14,7 +25,9 @@
 
     <div class="cards">
 
-      <a href="weblab.html" class="card">
+      
+
+      <a href=".\labs\Weblab\weblab.html" class="card">
         <div class="card-inner">WEB LAB</div>
       </a>
 
@@ -26,6 +39,16 @@
     </div>
 
   </div>
+
+
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+</script>
+
+
 
   <footer>
     &copy; 2025 RGITX. All rights reserved.
