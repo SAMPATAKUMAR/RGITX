@@ -43,7 +43,7 @@ void main()
     <!-- PROGRAM 2 -->
     <div class="program">
       <h2>PROGRAM 2</h2>
-      <h3>Prim's algorithm</h3>
+      <h3>Time Table</h3>
 
       <textarea id="code2">
 <!DOCTYPE html>
@@ -115,49 +115,61 @@ void main()
 
     <!-- PROGRAM 3a -->
     <div class="program">
-      <h2>PROGRAM 3a</h2>
-      <h3>Floyd's algorithm</h3>
+      <h2>PROGRAM 6</h2>
+      <h3>Calculater</h3>
 
       <textarea id="code3">
-#include<stdio.h>
-void floyd(int a[10][10],int n)
-{
-  int i,j,k;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Calculator</title>
+<style>
+  body {font-family: Arial; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; background:#f0f0f0;}
+  .calculator {background:#fff; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,.1); padding:20px; width:300px;}
+  #display {width:100%; height:40px; font-size:1.5em; text-align:right; margin-bottom:10px; padding:5px;}
+  .buttons {display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+  button {padding:10px; font-size:1.2em; border:none; border-radius:4px; background:#e0e0e0; cursor:pointer;}
+  button:hover {background:#d0d0d0;}
+  .operator {background:#f0a030; color:#fff;}
+  .operator:hover {background:#e09020;}
+</style>
+</head>
+<body>
+<div class="calculator">
+  <input type="text" id="display" readonly>
+  <div class="buttons">
+    <button onclick="add('7')">7</button><button onclick="add('8')">8</button><button onclick="add('9')">9</button><button class="operator" onclick="setOp('+')">+</button>
+    <button onclick="add('4')">4</button><button onclick="add('5')">5</button><button onclick="add('6')">6</button><button class="operator" onclick="setOp('-')">-</button>
+    <button onclick="add('1')">1</button><button onclick="add('2')">2</button><button onclick="add('3')">3</button><button class="operator" onclick="setOp('*')">×</button>
+    <button onclick="add('0')">0</button><button onclick="add('.')">.</button><button class="operator" onclick="calc()">=</button><button class="operator" onclick="setOp('/')">÷</button>
+    <button class="operator" onclick="setOp('%')">%</button><button class="operator" onclick="setOp('^')">xʸ</button><button class="operator" onclick="sqrt()">√</button><button class="operator" onclick="sq()">x²</button>
+    <button onclick="clr()">C</button>
+  </div>
+</div>
+<script>
+  let disp=document.getElementById('display'), cur='', prev='', op='';
+  const add=v=>{cur+=v; disp.value=cur;}
+  const clr=()=>{cur=prev=op=''; disp.value='';}
+  const setOp=o=>{if(cur){if(prev) calc(); op=o; prev=cur; cur='';}}
+  const calc=()=>{if(prev&&cur){let r; const a=+prev,b=+cur;
+    r=op=='+'?a+b:op=='-'?a-b:op=='*'?a*b:op=='/'?a/b:op=='%'?a%b:Math.pow(a,b);
+    disp.value=prev=r; cur=''; op='';}}
+  const sqrt=()=>{if(cur){cur=Math.sqrt(+cur); disp.value=cur;}}
+  const sq=()=>{if(cur){cur=Math.pow(+cur,2); disp.value=cur;}}
+</script>
+</body>
+</html>
       </textarea><br>
 
       <button class="copy-btn" onclick="copyText('code3')">Copy text</button>
     </div>
 
-    <hr>
 
-    <!-- PROGRAM 3b -->
-    <div class="program">
-      <h2>PROGRAM 3b</h2>
-      <h3>Warshall's algorithm</h3>
+    
 
-      <textarea id="code4">
-#include<stdio.h>
-int a[10][10],p[10][10];
-void path()
-{
-}
-      </textarea><br>
-
-      <button class="copy-btn" onclick="copyText('code4')">Copy text</button>
-    </div>
-
-  </div>
-
-  <script>
-    function copyText(id) {
-      const textarea = document.getElementById(id);
-      textarea.select();
-      textarea.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-      alert("Code copied!");
-    }
-  </script>
+   <script src="script.js"></script>
 
 </body>
 </html>
