@@ -4,7 +4,7 @@
     }
 
     body {
-      background: #f5f5f5;
+      background: #350909;
       margin: 0;
       padding: 20px;
     }
@@ -12,7 +12,7 @@
     .container {
       max-width: 900px;
       margin: auto;
-      background: #ffffff;
+      background: #746d6d;
       border: 2px solid red;
       padding-bottom: 30px;
     }
@@ -80,14 +80,15 @@
       padding: 10px;
       font-family: monospace;
       font-size: 13px;
+      border-radius: 25px;
     }
 
     .copy-btn {
       margin-top: 8px;
       background: #4f6df5;
-      color: white;
+      color: rgb(0, 0, 0);
       border: none;
-      padding: 6px 12px;
+      padding: 10px 16px;
       border-radius: 8px;
       cursor: pointer;
       font-size: 13px;
