@@ -102,3 +102,25 @@
       width: 90%;
       margin: 30px auto;
     }
+
+
+    .copy-btn {
+  background: linear-gradient(135deg, #6a5cff, #8f6bff);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-btn.copied {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 0 12px rgba(34,197,94,0.6);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}

@@ -1,12 +1,18 @@
-function copyText(id) {
-      const textarea = document.getElementById(id);
-      textarea.select();
-      textarea.setSelectionRange(0, 99999);
-      document.execCommand("copy");
-    }
+function copyText(id, btn) {
+  const textarea = document.getElementById(id);
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  document.execCommand("copy");
 
+  const originalText = btn.innerText;
+  btn.innerText = "Copied ✓";
+  btn.classList.add("copied");
 
-
+  setTimeout(() => {
+    btn.innerText = originalText;
+    btn.classList.remove("copied");
+  }, 2000);
+}
 
 
     // pro7
