@@ -62,52 +62,41 @@
 <script>
 let warned = false;
 
-function showWarning() {
-  if (!warned) {
-    alert("This is for cheat in your exam");
-    warned = true;
-  }
+function showBanner() {
+  if (warned) return;
+  warned = true;
+
+  const banner = document.getElementById("warningBanner");
+  banner.classList.add("show");
+
+  setTimeout(() => {
+    banner.classList.remove("show");
+  }, 3000);
 }
 
 // Disable right-click
 document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
-  showWarning();
-});
+  showBanner();
+}, true);
 
-// Disable DevTools & View Source keys
+// Disable DevTools & View Source
 document.addEventListener("keydown", function (e) {
+  const key = e.key.toLowerCase();
+
   if (
-    e.key === "F12" ||
-    (e.ctrlKey && e.key.toLowerCase() === "u") || // Ctrl + U
-    (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase()))
+    e.keyCode === 123 ||                 // F12
+    (e.ctrlKey && key === "u") ||         // Ctrl + U
+    (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(key))
   ) {
     e.preventDefault();
-    showWarning();
+    e.stopPropagation();
+    showBanner();
+    return false;
   }
-});
+}, true);
 </script>
 
-   <script>
-let warned = false;
-
-function showBanner() {
-  const banner = document.getElementById("warningBanner");
-
-  banner.classList.add("show", "shake");
-
-  setTimeout(() => {
-    banner.classList.remove("shake");
-  }, 400);
-
-  if (!warned) {
-    warned = true;
-    setTimeout(() => {
-      banner.classList.remove("show");
-    }, 3000);
-  }
-}
-</script>
 
 
 
