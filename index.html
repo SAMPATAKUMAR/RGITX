@@ -57,12 +57,13 @@
             document.getElementById("navLinks").classList.toggle("active");
         }
     </script>
-  <script>
-document.addEventListener("contextmenu", e => e.preventDefault();
-                        alert("This is for cheat in ur exam"); 
-    );
-    
+<script>
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  console.log("This is for cheat in your exam");
+});
 </script>
+
 
   <script>
 document.addEventListener("keydown", function (e) {
