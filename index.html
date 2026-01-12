@@ -26,7 +26,9 @@
     <span></span>
   </div>
 </header>
-
+ <div id="warningBanner">
+  ⚠️ This action is not allowed during the exam.
+</div>
 
 <!-- ===== PAGE CONTENT ===== -->
 <main class="page-content">
@@ -84,6 +86,27 @@ document.addEventListener("keydown", function (e) {
     showWarning();
   }
 });
+</script>
+
+   <script>
+let warned = false;
+
+function showBanner() {
+  const banner = document.getElementById("warningBanner");
+
+  banner.classList.add("show", "shake");
+
+  setTimeout(() => {
+    banner.classList.remove("shake");
+  }, 400);
+
+  if (!warned) {
+    warned = true;
+    setTimeout(() => {
+      banner.classList.remove("show");
+    }, 3000);
+  }
+}
 </script>
 
 
